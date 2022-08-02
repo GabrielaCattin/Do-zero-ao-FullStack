@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "backend": "nodemon server.js",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "frontend": "cd frontend && yarn start"
   },
   "keywords": [
     "MERN",
@@ -27,5 +29,8 @@
   },
   "engines": {
     "node": "16.14"
+  },
+  "devDependencies": {
+    "concurrently": "^7.3.0"
   }
 }
